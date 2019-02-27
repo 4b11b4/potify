@@ -2,7 +2,10 @@
 <body>
 {% block nav %}
   <ul>
-	  <li><a href="{% url 'song_list' %}">Songs</a></li>
+    <li><a href="{% url 'song_list' %}">Songs</a></li>
+    <li><a href="{% url 'artist_list' %}">Artists</a></li>
+    <li><a href="{% url 'album_list' %}">Albums</a></li>
+    <li><a href="{% url 'playlist_list' %}">Playlists</a></li>
   </ul>
 {% endblock %}
 {% block content %}
