@@ -19,6 +19,7 @@ from django.conf.urls import include
 from music.views import HomePageView
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view()),
     path('', include('music.urls')),
