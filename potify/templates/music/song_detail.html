@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>{{ object.name}}</h2>
+  <h2>{{ object.name }}</h2>
   <p>{{ object.audio }}</p>
-  <p>Artists: {{ object.artists }}</p>
-  <p>Albums: {{ object.albums }}</p>
-  <p>Play Count: {{ object.artists }}</p>
+  <p>Artists: {{ object.artists.all }}</p>
+  <p>Albums: {{ object.albums.all }}</p>
+  <p>Play Count: {{ object.play_count }}</p>
 {% endblock %}
