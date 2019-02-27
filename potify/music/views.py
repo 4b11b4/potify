@@ -1,14 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-from django.views.generic import DetailView
+from django.utils import timezone
+from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
-from .models import Song
-from .models import Artist 
-from .models import Album 
-from .models import Playlist 
+from .models import Song, Artist, Album, Playlist
 
-# Create your views here.
 
 class HomePageView(TemplateView):
     template_name = "base.html"
@@ -36,7 +32,7 @@ class ArtistDetail(DetailView):
 
 
 class AlbumList(ListView):
-    model = Album 
+    model = Album
 
 
 class AlbumDetail(DetailView):
