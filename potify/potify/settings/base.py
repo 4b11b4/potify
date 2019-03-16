@@ -6,14 +6,18 @@ import os
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
-
 ########## PATH CONFIGURATION
+# Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
+# Absolute filesystem path to the top-level project folder:
 SITE_ROOT = dirname(DJANGO_ROOT)
 
+# Site name:
 SITE_NAME = basename(DJANGO_ROOT)
 
+# Add our project to our pythonpath, this way we don't need to type our project
+# name in our dotted import paths:
 path.append(DJANGO_ROOT)
 ########## END PATH CONFIGURATION
 
@@ -55,12 +59,11 @@ STATIC_ROOT = normpath(join(SITE_ROOT, '../staticfiles'))
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    normpath(join(SITE_ROOT, '../static')),
+    normpath(join(SITE_ROOT, 'static')),
 )
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 ########## END STATIC FILE CONFIGURATION
 
@@ -73,6 +76,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 DJANGO_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,7 +84,6 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'grappelli',
 ]
 
 LOCAL_APPS = [

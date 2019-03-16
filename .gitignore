@@ -87,3 +87,9 @@ local_settings.py
 
 .env
 db.sqlite3
+
+
+#static files and song uploads
+staticfiles/
+potify/static/media
+
