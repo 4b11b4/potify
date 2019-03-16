@@ -55,7 +55,7 @@ STATIC_ROOT = normpath(join(SITE_ROOT, '../staticfiles'))
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    normpath(join(SITE_ROOT, '../static')),
+    normpath(join(SITE_ROOT, 'potify', 'static')),
 )
 
 STATICFILES_FINDERS = (
@@ -80,7 +80,6 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'grappelli',
 ]
 
 LOCAL_APPS = [
