@@ -27,7 +27,7 @@ class Song(models.Model):
     name = models.CharField(max_length=255)
     artists = models.ManyToManyField(Artist, blank=True, related_name='songs')
     albums = models.ManyToManyField(Album, blank=True, related_name='songs')
-    audio = models.FileField(upload_to='./static/media/songs', help_text='.mp3', null=True)
+    audio = models.FileField(upload_to='songs', help_text='Allowed format - .mp3', null=True)
     play_count = models.IntegerField()
 
     def __str__(self):

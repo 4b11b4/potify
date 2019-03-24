@@ -1,0 +1,11 @@
+html, body {
+    background: #e9ebee;
+    margin:  0;
+    padding: 0;
+    height: 100%;
+    font-family: 'open_sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
