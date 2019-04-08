@@ -2,10 +2,15 @@
 
 {% block content %}
   <h2>{{ object.name }}</h2>
-  <audio controls>
+  <audio controls onended="incrementPlayCount()">
     <source src="{{ object.audio.url }}" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
+  <script>
+  function incrementPlayCount() {
+    alert("Temporary popup. TODO: increment play count when song ends.");
+  }
+  </script>
   <p>Artist: {{ object.artists.first }}</p>
   <p>Album: {{ object.albums.first }}</p>
   <p>Play Count: {{ object.play_count }}</p>
