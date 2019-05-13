@@ -45,6 +45,8 @@ class Song(models.Model):
 			     validators=[FileExtensionValidator(allowed_extensions=['mp3'])],
 			     null=True)
     play_count = models.IntegerField()
+    #objects = SongManager()
+    #does line ^ add/modify custom manager methods to/from default manager? 
 
     def __str__(self):
         return self.name
