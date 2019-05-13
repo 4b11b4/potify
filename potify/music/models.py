@@ -1,7 +1,21 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 
-# Create your models here.
+
+class SongManager(models.Manager):
+    def AlbumArtistPlaylist(self):
+        from django.db import connection
+        with connection.cursor() as cursor:
+            cursor.execute("""
+            SELECT s.id, s.artists, s.albums
+            FROM models_song s
+            GROUP BY s.id, s.artists, s.albums
+            ORDER BY s.albums DESC""")
+            result_list = []
+            for row in cursor.fetchall():
+                s = self.model(id=row[0], artists=row[1], albums=row[2])
+                result_list.append(s)
+        return result_list
 
 
 class Artist(models.Model):
@@ -11,8 +25,7 @@ class Artist(models.Model):
 
     def __str__(self):
         return self.name
-
-
+        
 class Album(models.Model):
     name = models.CharField(max_length=255)
     release_date = models.DateField(blank=True, null=True)
@@ -22,7 +35,6 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Song(models.Model):
     name = models.CharField(max_length=255)
@@ -36,7 +48,6 @@ class Song(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Playlist(models.Model):
     name = models.CharField(max_length=255)
