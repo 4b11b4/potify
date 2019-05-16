@@ -36,14 +36,12 @@ class AlbumList(ListView):
 
 
 class AlbumDetail(DetailView):
-    model = Album 
+    model = Album
 
 
 class PlaylistList(ListView):
-    model = Playlist 
+    model = Playlist
 
 
 class PlaylistDetail(DetailView):
     model = Playlist
-    
-
