@@ -6,6 +6,26 @@ html, body {
     font-family: 'open_sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-ul {
-    list-style: none;
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li.navbar-item {
+  float: left;
+}
+
+li.navbar-item a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li.navbar-item a:hover {
+  background-color: #111111;
 }
