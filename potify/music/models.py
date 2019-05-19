@@ -1,8 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 
-# Create your models here.
-
 
 class Artist(models.Model):
     name = models.CharField(max_length=255)
@@ -29,9 +27,9 @@ class Song(models.Model):
     artists = models.ManyToManyField(Artist, blank=True, related_name='songs')
     albums = models.ManyToManyField(Album, blank=True, related_name='songs')
     audio = models.FileField(upload_to='songs',
-		             help_text='Allowed format - .mp3',
-			     validators=[FileExtensionValidator(allowed_extensions=['mp3'])],
-			     null=True)
+                             help_text='Allowed format - .mp3',
+                             validators=[FileExtensionValidator(allowed_extensions=['mp3'])],
+                             null=True)
     play_count = models.IntegerField()
 
     def __str__(self):
