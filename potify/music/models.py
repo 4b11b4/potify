@@ -4,7 +4,7 @@ from django.core.validators import FileExtensionValidator
 
 class Artist(models.Model):
     name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='./static/media/artists')
+    image = models.ImageField(upload_to='artists')
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Artist(models.Model):
 class Album(models.Model):
     name = models.CharField(max_length=255)
     release_date = models.DateField(blank=True, null=True)
-    image = models.ImageField(upload_to='./static/media/albums')
+    image = models.ImageField(upload_to='albums')
     description = models.TextField(blank=True, null=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE, null=True)
 
@@ -39,7 +39,7 @@ class Song(models.Model):
 class Playlist(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='./static/media/playlists')
+    image = models.ImageField(upload_to='playlists')
     songs = models.ManyToManyField(Song, blank=True, related_name='playlists')
 
     def __str__(self):
