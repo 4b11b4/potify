@@ -13,6 +13,7 @@ class ArtistSerializer(serializers.HyperlinkedModelSerializer):
         model = Artist
         exclude = ()
 
+
 class SongSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Song

@@ -5,8 +5,7 @@ from django.views.generic.base import TemplateView
 from rest_framework import viewsets
 
 from .models import Song, Artist, Album, Playlist
-from .serializers import SongSerializer, ArtistSerializer, AlbumSerializer
-from .serializers import PlaylistSerializer
+from .serializers import SongSerializer, ArtistSerializer, AlbumSerializer, PlaylistSerializer
 
 
 class HomePageView(TemplateView):
