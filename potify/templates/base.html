@@ -6,11 +6,12 @@
 
 <body>
 {% block nav %}
-  <ul>
-    <li><a href="{% url 'song_list' %}">Songs</a></li>
-    <li><a href="{% url 'artist_list' %}">Artists</a></li>
-    <li><a href="{% url 'album_list' %}">Albums</a></li>
-    <li><a href="{% url 'playlist_list' %}">Playlists</a></li>
+  <ul class="navbar">
+    <li class="navbar-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="navbar-item"><a href="{% url 'song_list' %}">Songs</a></li>
+    <li class="navbar-item"><a href="{% url 'artist_list' %}">Artists</a></li>
+    <li class="navbar-item"><a href="{% url 'album_list' %}">Albums</a></li>
+    <li class="navbar-item"><a href="{% url 'playlist_list' %}">Playlists</a></li>
   </ul>
 {% endblock %}
 {% block content %}
