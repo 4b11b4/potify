@@ -1,11 +1,11 @@
-Command to run the postgres server (Linux):
+1. Command to run the postgres server (Linux):
 /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l start logfile
 
-Notes from installing Vue.js:
+2. Notes from installing Vue.js:
 - installed yarn and nose.js.. where do we track this dependency? it is obviously not tracked by pip
 - in potify/potify/frontend, a folder called node_modules was installed after running yarn... i assume this is not what we want
 
-Vue seems to be properly hitting the Django api.
+3. Vue seems to be properly hitting the Django api:
 For example:
 if you navigate to
 http://localhost:8080/api/phrases/
@@ -16,3 +16,6 @@ However,
 localhost:8080 loads index.html from frontend/public which then loads frontend/src/App.vue and whatever is in the <div id="app">
 whereas
 localhost:8000 loads from our django base html template?
+
+4. Static file management
+* I assume we do not want to commit frontend/dist to the repo
