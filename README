@@ -11,6 +11,8 @@ if you navigate to
 http://localhost:8080/api/phrases/
 is the same as navigating to 
 http://localhost:8000/api/phrases/
+* Although, we don't have anything in our api that you can find at /api/phrases
+  * That is what that simple javascript function is for... it's a filler
 
 However,
 localhost:8080 loads index.html from frontend/public which then loads frontend/src/App.vue and whatever is in the <div id="app">
