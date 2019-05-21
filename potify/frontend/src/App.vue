@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h1>Basic Vue example hitting api/phrases/</h1>
+    <h1>Basic Vue example not actually hitting api/phrases/ but the /api/phrases url calls a function which returns some JSON</h1>
     <p
       v-for="(phrase, index) in phrases_from_api"
       :key="index"

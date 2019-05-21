@@ -93,3 +93,5 @@ db.sqlite3
 staticfiles/
 potify/static/media
 
+# VIM
+.swp
