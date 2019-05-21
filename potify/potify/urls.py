@@ -9,6 +9,8 @@ from rest_framework import routers
 
 from music import views
 
+from .views import index, simple_api_view
+
 
 router = routers.DefaultRouter()
 router.register(r'albums', views.AlbumViewSet)
@@ -22,6 +24,7 @@ urlpatterns = [
     path('', HomePageView.as_view()),
     path('', include('music.urls')),
     path('api/', include(router.urls)),
+    path('api/phrases/', simple_api_view, name='phrases'),
     path('api-auth/', include('rest_framework.urls',
                               namespace='rest_framework'))
 ]
