@@ -15,6 +15,11 @@ SITE_ROOT = dirname(DJANGO_ROOT)
 SITE_NAME = basename(DJANGO_ROOT)
 
 path.append(DJANGO_ROOT)
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Added when Vue was installed
+# Is this different than the DJANGO_ROOT?
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ########## END PATH CONFIGURATION
 
 
@@ -116,7 +121,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-		        'django.template.context_processors.media',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -151,3 +156,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+# Vue project location
+FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
+
+# Webpack output location containing Vue index.html file (outputDir)
+TEMPLATES[0]['DIRS'] += [
+    os.path.join(FRONTEND_DIR, 'dist'),
+]
