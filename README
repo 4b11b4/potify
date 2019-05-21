@@ -4,3 +4,15 @@ Command to run the postgres server (Linux):
 Notes from installing Vue.js:
 - installed yarn and nose.js.. where do we track this dependency? it is obviously not tracked by pip
 - in potify/potify/frontend, a folder called node_modules was installed after running yarn... i assume this is not what we want
+
+Vue seems to be properly hitting the Django api.
+For example:
+if you navigate to
+http://localhost:8080/api/phrases/
+is the same as navigating to 
+http://localhost:8000/api/phrases/
+
+However,
+localhost:8080 loads the Vue related index.html
+whereas
+localhost:8000 loads from our django base html template?
