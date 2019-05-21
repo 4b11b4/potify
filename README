@@ -13,6 +13,6 @@ is the same as navigating to
 http://localhost:8000/api/phrases/
 
 However,
-localhost:8080 loads index.html from frontend/public?
+localhost:8080 loads index.html from frontend/public which then loads frontend/src/App.vue and whatever is in the <div id="app">
 whereas
 localhost:8000 loads from our django base html template?
