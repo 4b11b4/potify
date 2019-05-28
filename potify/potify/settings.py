@@ -52,13 +52,6 @@ MEDIA_URL = '/static/media/'
 ########## VUE CONFIGURATION
 # Vue project location
 FRONTEND_DIR = os.path.join(DJANGO_ROOT, 'frontend')
-
-# Webpack output location containing Vue index.html file (outputDir)
-# adds the Webpack build directory to Django’s template paths so Django can find
-# the production index.html Vue template
-TEMPLATES[0]['DIRS'] += [
-        os.path.join(FRONTEND_DIR, 'dist'),
-]
 ########## END VUE CONFIGURATION
 
 
@@ -137,6 +130,15 @@ TEMPLATES = [
         },
     },
 ]
+
+# For Vue Configuration
+# Webpack output location containing Vue index.html file (outputDir)
+# adds the Webpack build directory to Django’s template paths so Django can find
+# the production index.html Vue template
+TEMPLATES[0]['DIRS'] += [
+        os.path.join(FRONTEND_DIR, 'dist'),
+]
+
 
 WSGI_APPLICATION = 'potify.wsgi.application'
 
