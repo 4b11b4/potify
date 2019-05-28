@@ -49,6 +49,19 @@ MEDIA_URL = '/static/media/'
 ########## END MEDIA CONFIGURATION
 
 
+########## VUE CONFIGURATION
+# Vue project location
+FRONTEND_DIR = os.path.join(DJANGO_ROOT, 'frontend')
+
+# Webpack output location containing Vue index.html file (outputDir)
+# adds the Webpack build directory to Django’s template paths so Django can find
+# the production index.html Vue template
+TEMPLATES[0]['DIRS'] += [
+        os.path.join(FRONTEND_DIR, 'dist'),
+]
+########## END VUE CONFIGURATION
+
+
 ########## STATIC FILE CONFIGURATION
 STATIC_ROOT = normpath(join(SITE_ROOT, '../staticfiles'))
 
@@ -155,12 +168,3 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-# Vue project location
-FRONTEND_DIR = os.path.join(DJANGO_ROOT, 'frontend')
-
-# Webpack output location containing Vue index.html file (outputDir)
-# adds the Webpack build directory to Django’s template paths so Django can find
-# the production index.html Vue template
-TEMPLATES[0]['DIRS'] += [
-        os.path.join(FRONTEND_DIR, 'dist'),
-]
