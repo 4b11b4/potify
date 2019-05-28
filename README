@@ -7,3 +7,4 @@ Vue Install:
 3. cp ~/pub/blog-examples/integrate-django-vue/django_vue/views.py ~/pub/potify/potify/potify/views.py
 4. Add the view we just copied to urls.py
 5. Run 'yarn install' in frontend dir
+6. Run 'yarn run serve' in frontend dir 
