@@ -4,3 +4,6 @@ Command to run the postgres server (Linux):
 Vue Install:
 1. cp -r ~/pub/blog-examples/integrate-django-vue/frontend/ ~/pub/potify/potify/frontend/
 2. Update settings.py according to tutorial
+3. cp ~/pub/blog-examples/integrate-django-vue/django_vue/views.py ~/pub/potify/potify/potify/views.py
+4. Add the view we just copied to urls.py
+5. Run 'yarn install' in frontend dir
