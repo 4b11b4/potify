@@ -56,6 +56,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'potify', 'static')),
+# adds the Webpack built assets directory, frontend/dist/static, to Django’s
+# list of directories containing static files
+    os.path.join(FRONTEND_DIR, 'dist/static'),
 )
 
 STATICFILES_FINDERS = (
@@ -116,7 +119,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-		        'django.template.context_processors.media',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -156,6 +159,8 @@ REST_FRAMEWORK = {
 FRONTEND_DIR = os.path.join(DJANGO_ROOT, 'frontend')
 
 # Webpack output location containing Vue index.html file (outputDir)
+# adds the Webpack build directory to Django’s template paths so Django can find
+# the production index.html Vue template
 TEMPLATES[0]['DIRS'] += [
         os.path.join(FRONTEND_DIR, 'dist'),
 ]
