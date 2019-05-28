@@ -151,3 +151,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+# Vue project location
+FRONTEND_DIR = os.path.join(DJANGO_ROOT, 'frontend')
+
+# Webpack output location containing Vue index.html file (outputDir)
+TEMPLATES[0]['DIRS'] += [
+        os.path.join(FRONTEND_DIR, 'dist'),
+]
