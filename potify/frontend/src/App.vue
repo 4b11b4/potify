@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h1>Phrases from Django API:</h1>
+    <h1>Fetch Songs:</h1>
     <p
-      v-for="(phrase, index) in phrases_from_api"
+      v-for="(song, index) in songs_from_api"
       :key="index"
     >
-      {{ phrase }}
+      {{ song }}
     </p>
-    <button type="button" @click="fetchPhrases">
-      Fetch Phrases
+    <button type="button" @click="fetchSongs">
+      Fetch Songs
     </button>
   </div>
 </template>
@@ -20,14 +20,17 @@ export default {
 
   data: function() {
     return {
-      phrases_from_api: [],
+      songs_from_api: [],
     }
   },
 
   methods: {
-    async fetchPhrases() {
-      const response = await this.$http.get('/api/phrases/')
-      this.phrases_from_api = response.body.data
+    async fetchSongs() {
+      const response = await this.$http.get('/api/songs/')
+      this.songs_from_api = response.data
+      /* eslint-disable no-console */
+      console.log('songs from api: ' + this.songs_from_api)
+      /* eslint-enable no-console */
     }
   }
 

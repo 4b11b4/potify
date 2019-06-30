@@ -2,7 +2,9 @@
 
 ## Project setup
 ```
+cd potify/frontend
 yarn install
+npm install --save axios vue-axios
 ```
 
 ### Compiles and hot-reloads for development
