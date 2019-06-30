@@ -7,17 +7,16 @@
       :key="index">
       <div class="ghettoplayer">
         <p>{{ song.name }}</p>
-            <audio ref="player" controls>
-            {% verbatim %}
-                <source :src='song'>
+            <audio controls>
+                <source :src='song.audio' type="audio/mp3">
                 Your browser does not support the audio element.
-                {% endverbatim %}
             </audio>
-        </div>
+      </div>
     </div>
     <button type="button" @click="fetchSongs">
       Fetch Songs
     </button>
+
   </div>
 </template>
 
