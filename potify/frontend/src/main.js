@@ -11,7 +11,6 @@ new Vue({
   render: h => h(App),
 }).$mount('#app')
 
-
 Vue.axios.get('api/songs').then((response) => {
     /* eslint-disable no-console */
 	console.log(response.data);
