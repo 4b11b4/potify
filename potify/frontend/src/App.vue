@@ -19,6 +19,12 @@
       Fetch Songs
     </button>
 
+    <test-component
+      v-for="(song, index) in songs_from_api"
+      v-bind:name="song.name"
+      v-bind:key="index"
+    ></test-component>
+
     <test-component name="testname"></test-component>
 
     <div
