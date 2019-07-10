@@ -8,3 +8,6 @@ Vue Install:
 4. Add the view we just copied to urls.py
 5. Run 'yarn install' in frontend dir
 6. Run 'yarn run serve' in frontend dir 
+
+Vue Router Install:
+npm install --save vue-router

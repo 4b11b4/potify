@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <Navigation></Navigation>
+    <router-view/>
     <h1>Fetch Songs:</h1>
 
     <div
@@ -44,13 +45,15 @@
 <script>
 import TestComponent from './components/TestComponent.vue'
 import PlayerComponent from './components/PlayerComponent.vue'
+import Navigation from './components/Navigation.vue'
 
 
 export default {
   name: 'app',
   components: {
     TestComponent,
-    PlayerComponent
+    PlayerComponent,
+    Navigation
   },
   data: function() {
     return {
