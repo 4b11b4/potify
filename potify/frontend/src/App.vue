@@ -2,8 +2,9 @@
   <div id="app">
     <Navigation></Navigation>
     <router-view/>
+    
+    <!--
     <h1>Fetch Songs:</h1>
-
     <div
       v-for="(song, index) in songs_from_api"
       :key="index">
@@ -26,8 +27,6 @@
       v-bind:key="index"
     ></test-component>
 
-    <test-component name="testname"></test-component>
-
     <div
       v-for="item in groceryList"
       v-bind:name="item"
@@ -39,20 +38,18 @@
     <player-component>
     </player-component>
 
+    -->
+
   </div>
 </template>
 
 <script>
-import TestComponent from './components/TestComponent.vue'
-import PlayerComponent from './components/PlayerComponent.vue'
 import Navigation from './components/Navigation.vue'
 
 
 export default {
   name: 'app',
   components: {
-    TestComponent,
-    PlayerComponent,
     Navigation
   },
   data: function() {
