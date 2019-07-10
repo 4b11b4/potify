@@ -35,16 +35,22 @@
       {{ item.text }}
     </div>
 
+    <player-component>
+    </player-component>
+
   </div>
 </template>
 
 <script>
 import TestComponent from './components/TestComponent.vue'
+import PlayerComponent from './components/PlayerComponent.vue'
+
 
 export default {
   name: 'app',
   components: {
-    TestComponent
+    TestComponent,
+    PlayerComponent
   },
   data: function() {
     return {
