@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h2>About</h2>
-    <p>This site is for learning Django and Vue.</p>
+    <h2>Albums</h2>
+    <p>This is a list of albums.</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'About'
+  name: 'Albums'
 }
 </script>
 

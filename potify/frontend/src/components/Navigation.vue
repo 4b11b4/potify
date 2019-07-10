@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Nav Bar</h2>
+    <h1>Potify</h1>
     <nav>
       <router-link class="spacing" v-for="routes in links" 
       v-bind:key="routes.id"
@@ -22,6 +22,26 @@ export default {
         },
         {
           id: 2,
+          text: 'Artists',
+          page:'/Artists'
+        },
+        {
+          id: 3,
+          text: 'Albums',
+          page:'/Albums'
+        },
+        {
+          id: 4,
+          text: 'Songs',
+          page:'/Songs'
+        },
+        {
+          id: 5,
+          text: 'Playlists',
+          page:'/Playlists'
+        },
+        {
+          id: 6,
           text: 'About',
           page:'/About'
         }
@@ -30,6 +50,7 @@ export default {
   }
 }
 </script>
+
 <style>
 .spacing {
   margin-right: 10px;
