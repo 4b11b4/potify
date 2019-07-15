@@ -4,9 +4,12 @@
       <b-navbar-brand href="#">Potify</b-navbar-brand> 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
-        <b-link active class="spacing" v-for="routes in links" 
-        v-bind:key="routes.id"
-        :to="`${routes.page}`">{{routes.text}}</b-link>
+        <b-navbar-nav>
+          <b-nav-item active v-for="routes in links" 
+          v-bind:key="routes.id"
+          :to="`${routes.page}`">{{routes.text}}</b-nav-item>
+   
+        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
@@ -52,5 +55,10 @@ export default {
 <style>
 .spacing {
   margin-right: 10px;
+}
+/* Vue automatically sets the active
+router link for you! */
+nav a.router-link-active {
+    font-weight: 700;
 }
 </style>
