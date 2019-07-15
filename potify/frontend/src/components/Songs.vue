@@ -5,9 +5,7 @@
     <div
       v-for="(song, index) in song_list"
       :key="index">
-      <div class="ghettoplayer">
-        <p>{{ song.name }}</p>
-      </div>
+      <p>{{ song.name }}</p>
     </div>
   </div>
 </template>
@@ -22,9 +20,11 @@ export default {
       song_list: []
     }
   },
-  created() {
-      axios.get('api/songs').then((response) => {
+  mounted() { //created or mounted, which one?
+    axios.get('api/songs').then((response) => {
       this.song_list = response.data.results
+      // eslint-disable-next-line
+      console.log(this.song_list)
     })
   }
 }

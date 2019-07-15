@@ -35,22 +35,23 @@
       {{ item.text }}
     </div>
 
-    <player-component>
-    </player-component>
-
     -->
+
+    <player-component></player-component>
 
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation.vue'
+import PlayerComponent from './components/PlayerComponent.vue'
 
 
 export default {
   name: 'app',
   components: {
-    Navigation
+    Navigation,
+    PlayerComponent
   },
   data: function() {
     return {
