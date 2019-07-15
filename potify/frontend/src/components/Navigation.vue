@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>Potify</h1>
-    <nav>
-      <router-link class="spacing" v-for="routes in links" 
+    <b-navbar type="light" variant="light">
+      <b-navbar-brand href="#">Potify</b-navbar-brand> 
+      <b-link active class="spacing" v-for="routes in links" 
       v-bind:key="routes.id"
-      :to="`${routes.page}`">{{routes.text}}</router-link>
-    </nav>
+      :to="`${routes.page}`">{{routes.text}}</b-link>
+    </b-navbar>
   </div>
 </template>
 
