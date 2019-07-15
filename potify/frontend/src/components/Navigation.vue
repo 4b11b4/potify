@@ -39,11 +39,6 @@ export default {
           id: 5,
           text: 'Playlists',
           page:'/Playlists'
-        },
-        {
-          id: 6,
-          text: 'About',
-          page:'/About'
         }
       ]
     }
