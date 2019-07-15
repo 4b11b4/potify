@@ -5,7 +5,6 @@ import Artists from '@/components/Artists'
 import Albums from '@/components/Albums'
 import Songs from '@/components/Songs'
 import Playlists from '@/components/Playlists'
-import About from '@/components/About'
 
 Vue.use(Router)
 
@@ -35,11 +34,6 @@ export default new Router({
       path: '/playlists',
       name: 'Playlists',
       component: Playlists 
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About
     }
   ]
 })
