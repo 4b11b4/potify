@@ -1,10 +1,13 @@
 <template>
   <div>
-    <b-navbar type="light" variant="light">
+    <b-navbar toggleable="md" type="light" variant="light">
       <b-navbar-brand href="#">Potify</b-navbar-brand> 
-      <b-link active class="spacing" v-for="routes in links" 
-      v-bind:key="routes.id"
-      :to="`${routes.page}`">{{routes.text}}</b-link>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-link active class="spacing" v-for="routes in links" 
+        v-bind:key="routes.id"
+        :to="`${routes.page}`">{{routes.text}}</b-link>
+      </b-collapse>
     </b-navbar>
   </div>
 </template>
