@@ -6,8 +6,13 @@ export const store = new Vuex.Store({
   state: {
     song: ''
   },
+  actions: {
+    setActiveSong(context, song) {
+      context.commit('changeSong', song);
+    }
+  },
   mutations: {
-    change(state, song) {
+    changeSong(state, song) {
       state.song = song
     }
   },
