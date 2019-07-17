@@ -7,6 +7,22 @@ Vue.use(BootstrapVue)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import Vuex from 'vuex'
+Vue.use(Vuex)
+export const store = new Vuex.Store({
+  state: {
+    song: ''
+  },
+  mutations: {
+    change(state, song) {
+      state.song = song
+    }
+  },
+  getters: {
+    song: state => state.song
+  }
+})
+
 /* Currently, axios is loaded directly by the Songs
  * component. Loading it here did not allow the
  * component to utilize it.
@@ -19,5 +35,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
