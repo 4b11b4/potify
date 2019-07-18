@@ -1,17 +1,23 @@
 <template>
   <div>
     <h2>Songs</h2>
-
     <div
       v-for="(song, index) in song_list"
       :key="index">
       <p>{{ song.name }}</p>
     </div>
+    <b-button
+      v-for="(song, index) in song_list"
+      @click="setActiveSong(song.url)"
+      :key="index">
+    {{ song.name }}
+    </b-button>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Songs',
@@ -19,6 +25,12 @@ export default {
     return {
       song_list: []
     }
+  },
+  methods: {
+    ...mapActions( [
+      'setActiveSong'
+      // map setActiveSong(song) to this.$store.dispatch('setActiveSong', song)
+    ] )
   },
   mounted() { //created or mounted, which one?
     axios.get('api/songs').then((response) => {

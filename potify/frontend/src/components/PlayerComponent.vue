@@ -4,6 +4,7 @@
       <source :src='song' type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
+    <p> {{ song }} </p >
   </div>
 </template>
 
@@ -21,7 +22,7 @@ export default {
   },
   computed: {
     song() {
-      return this.store.state.song;
+      return this.$store.state.song;
     }
   }
 }

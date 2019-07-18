@@ -9,6 +9,8 @@ export const store = new Vuex.Store({
   actions: {
     setActiveSong(context, song) {
       context.commit('changeSong', song);
+      // eslint-disable-next-line
+      console.log(song)
     }
   },
   mutations: {
