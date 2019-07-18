@@ -7,20 +7,12 @@
         <b-col>Artist</b-col>
         <b-col>Album</b-col>
       </b-row>
-      <b-row
+      <div
         v-for="(song, index) in song_list"
         @click="setActiveSong(song.audio)"
         :key="index">
-          <b-col>{{ song.name }}</b-col>
-          <b-col>
-            <div
-              v-for="(artist, index) in artist_list"
-              :key="index">
-              <p>{{ artist }}</p>
-            </div>
-          </b-col>
-          <b-col>{{ song.albums }}</b-col>
-      </b-row>
+          <song-row v-bind:song="song"></song-row>
+      </div>
     </b-container>
     <!--
     <div
@@ -36,6 +28,7 @@
 <script>
 import axios from 'axios'
 import { mapActions } from 'vuex'
+import SongRow from './SongRow.vue'
 
 export default {
   name: 'Songs',
@@ -44,6 +37,9 @@ export default {
       song_list: [],
       artist_list: []
     }
+  },
+  components: {
+    SongRow
   },
   methods: {
     ...mapActions( [
@@ -56,6 +52,7 @@ export default {
       })
     }
   },
+  /* Should created() be used here? */
   mounted() { //created or mounted, which one?
     axios.get('api/songs').then((response) => {
       this.song_list = response.data.results
