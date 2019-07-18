@@ -8,7 +8,7 @@
     </div>
     <b-button
       v-for="(song, index) in song_list"
-      @click="setActiveSong(song.url)"
+      @click="setActiveSong(song.audio)"
       :key="index">
     {{ song.name }}
     </b-button>

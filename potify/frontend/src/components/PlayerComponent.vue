@@ -1,7 +1,7 @@
 <template>
-  <div class="player">
-    <audio controls>
-      <source :src='song' type="audio/mp3">
+  <div>
+    <audio controls ref="player">
+      <source v-bind:src="song" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
     <p> {{ song }} </p >
@@ -19,6 +19,15 @@ export default {
       current_time: 0,
       total_time: 0
     } 
+  },
+  /* Actually load the song when the source changes */
+  mounted: function() {
+    this.$watch('song', function() {
+      this.$refs.player.load()
+      this.$refs.player.play()
+    });
+    // eslint-disable-next-line
+    console.log(this.$refs)
   },
   computed: {
     song() {
