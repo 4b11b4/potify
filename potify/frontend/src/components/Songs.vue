@@ -57,6 +57,8 @@ export default {
     axios.get('api/songs').then((response) => {
       this.song_list = response.data.results
       // eslint-disable-next-line
+      console.log('Song_List:')
+      // eslint-disable-next-line
       console.log(this.song_list)
     })
   }

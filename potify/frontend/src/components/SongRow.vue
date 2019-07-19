@@ -34,24 +34,34 @@ export default {
 
     var artistPrim = this.song.artists.valueOf();
     // eslint-disable-next-line
-    console.log('ArtistPrim ' + artistPrim)
-
-    var artistIdx = artistPrim.indexOf("p")
+    console.log('ArtistPrim:')
     // eslint-disable-next-line
-    console.log('ArtistIdx ' + artistIdx)
+    console.log(artistPrim)
 
-    this.song.artists = this.song.artists.slice(artistIdx) 
+    var artistIdx = artistPrim.indexOf("p");
     // eslint-disable-next-line
-    console.log('ArtistURL ' + this.song.artists)
+    console.log('ArtistIdx:')
+    // eslint-disable-next-line
+    console.log(artistIdx)
+
+    var urlSlice = artistPrim.slice("0");
+    // eslint-disable-next-line
+    console.log('urlSlice')
+    // eslint-disable-next-line
+    console.log(urlSlice)
 
     axios.get(this.song.artists).then((response) => {
       this.artists = response.data.results
       // eslint-disable-next-line
-      console.log('Artists ' + this.artists)
+      console.log('Artists:')
+      // eslint-disable-next-line
+      console.log(this.artists)
     })
 
     axios.get(this.song.albums).then((response) => {
       this.albums = response.data.results
+      // eslint-disable-next-line
+      console.log('Albums:')
       // eslint-disable-next-line
       console.log(this.albums)
     })
