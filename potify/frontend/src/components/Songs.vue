@@ -3,6 +3,7 @@
     <h2>Songs</h2>
     <b-container fluid>
       <b-row>
+        <b-col>Plays</b-col>
         <b-col>Title</b-col>
         <b-col>Artist</b-col>
         <b-col>Album</b-col>
