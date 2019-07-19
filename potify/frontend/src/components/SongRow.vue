@@ -28,6 +28,8 @@ export default {
        has to query the API again for the artist and album. This method
        results in a crap ton of queries??! 
        Maybe we want to re-structure the Django models */
+    
+    /* Consider re-implementing as a table so the song list can be sorted? */
 
     /* This method only grabs the FIRST artist and album, not all of them */
 
