@@ -23,93 +23,29 @@ export default {
     }
   },
   mounted() { //created or mounted, which one?
-    // eslint-disable-next-line
-    console.log('Song')
-    // eslint-disable-next-line
-    console.log(this.song)
-
-    // eslint-disable-next-line
-    console.log('Song.Artists:')
-    // eslint-disable-next-line
-    console.log(this.song.artists)
-
-    // eslint-disable-next-line
-    console.log('type:')
-    // eslint-disable-next-line
-    console.log(typeof this.song.artists)
-
+    /* Get the URL to query for the artist */
     var artistPrim = this.song.artists[0].valueOf();
-    // eslint-disable-next-line
-    console.log('ArtistPrim:')
-    // eslint-disable-next-line
-    console.log(artistPrim)
-
-    var artistIdx = artistPrim.indexOf("api");
-    // eslint-disable-next-line
-    console.log('ArtistIdx:')
-    // eslint-disable-next-line
-    console.log(artistIdx)
-
-    var urlSlice = artistPrim.slice(artistIdx, artistPrim.length);
-    // eslint-disable-next-line
-    console.log('urlSlice:')
-    // eslint-disable-next-line
-    console.log(urlSlice)
-
-    // eslint-disable-next-line
-    console.log('Trying to query artists:')
-    axios.get(urlSlice)
+    var sliceIdx = artistPrim.indexOf("api"); // assume idx is same for both
+    var artistUrl = artistPrim.slice(sliceIdx, artistPrim.length);
+    axios.get(artistUrl)
       .then((response) => {
         this.artists = response.data
-        // eslint-disable-next-line
-        console.log('Artists from axios:')
-        // eslint-disable-next-line
-        console.log(this.artists)
       })
-      .catch((error) => {
-        // eslint-disable-next-line
-        console.log('error:')
-        // eslint-disable-next-line
-        console.log(error)
-        // eslint-disable-next-line
-        console.log(error.config)
-      })
-    // eslint-disable-next-line
-    console.log('After artists query.')
-    
-    /* Some really bad error catching to prevent
-       the album from being "Object" if it is not defined */
+
+    /* Now get the URL for the album. */
+    /* Including some really bad error catching to prevent
+       the album name from being "Object" if it is not defined */
     try {
       var albumPrim = this.song.albums[0].valueOf();
+      var albumUrl = albumPrim.slice(sliceIdx, albumPrim.length);
+      axios.get(albumUrl).then((response) => {
+        this.albums = response.data
+      })
     } catch (e) {
       this.albums = {
         name: 'n/a'
       }
     }
-    // eslint-disable-next-line
-    console.log('AlbumPrim:')
-    // eslint-disable-next-line
-    console.log(albumPrim)
-
-    var albumIdx = albumPrim.indexOf("api");
-    // eslint-disable-next-line
-    console.log('AlbumIdx:')
-    // eslint-disable-next-line
-    console.log(albumIdx)
-
-    var albumURLSlice = albumPrim.slice(albumIdx, albumPrim.length);
-    // eslint-disable-next-line
-    console.log('albumURLSlice:')
-    // eslint-disable-next-line
-    console.log(albumURLSlice)
-    
-    axios.get(albumURLSlice).then((response) => {
-      this.albums = response.data
-      // eslint-disable-next-line
-      console.log('Albums from axios:')
-      // eslint-disable-next-line
-      console.log(this.albums)
-    })
   }
 }
 </script>
