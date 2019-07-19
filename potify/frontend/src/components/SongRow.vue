@@ -23,6 +23,12 @@ export default {
     }
   },
   mounted() { //created or mounted, which one?
+    /* SongRow gets passed a Song object from Songs.vue. It then
+       has to query the API again for the artist and album. This method
+       results in a crap ton of queries??! */
+
+    /* This method only grabs the FIRST artist and album, not all of them */
+
     /* Get the URL to query for the artist */
     var artistPrim = this.song.artists[0].valueOf();
     var sliceIdx = artistPrim.indexOf("api"); // assume idx is same for both
