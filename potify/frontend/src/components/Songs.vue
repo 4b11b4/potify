@@ -45,12 +45,7 @@ export default {
     ...mapActions( [
       'setActiveSong'
       // map setActiveSong(song) to this.$store.dispatch('setActiveSong', song)
-    ] ),
-    getArtists: function(artistURL) {
-      axios.get(artistURL).then((response) => {
-        this.artists_list = response.data.results 
-      })
-    }
+    ] )
   },
   /* Should created() be used here? */
   mounted() { //created or mounted, which one?

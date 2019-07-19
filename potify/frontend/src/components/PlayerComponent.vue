@@ -21,6 +21,11 @@ export default {
     } 
   },
   /* Actually load the song when the source changes */
+  /* Isn't there a specific watcher lifecycle function?
+     this is a workaround... creating a function that
+     gets mounted? the only reason i am noting is because
+     an error gets logged to the console on startup
+     that the media player cant load unspported text/html type */
   mounted: function() {
     this.$watch('song', function() {
       this.$refs.player.load()

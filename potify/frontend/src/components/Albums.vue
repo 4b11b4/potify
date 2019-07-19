@@ -16,6 +16,8 @@ export default {
     }
   },
   mounted() { //created or mounted, which one?
+    // eslint-disable-next-line
+    console.log('Album.vue mount.')
     axios.get('api/songs').then((response) => {
       this.album_list = response.data.results
       // eslint-disable-next-line
