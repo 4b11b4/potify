@@ -4,7 +4,7 @@
       <source v-bind:src="song" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
-    <p> {{ song }} </p >
+    <p> {{ title }} </p >
   </div>
 </template>
 
@@ -39,8 +39,12 @@ export default {
     /* eslint-enable */
   },
   computed: {
+    /* Consider renaming to URL or something else */
     song() {
       return this.$store.state.song;
+    },
+    title() {
+      return this.$store.state.title;
     }
   }
 }

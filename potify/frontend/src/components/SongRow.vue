@@ -23,7 +23,7 @@ export default {
       albums: Object 
     }
   },
-  mounted() { //created or mounted, which one?
+  mounted() {
     /* SongRow gets passed a Song object from Songs.vue. It then
        has to query the API again for the artist and album. This method
        results in a crap ton of queries??! 

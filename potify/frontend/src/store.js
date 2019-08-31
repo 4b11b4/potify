@@ -4,22 +4,29 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    song: ''
+    audio: '',
+    title: ''
   },
   actions: {
     setActiveSong(context, song) {
       context.commit('changeSong', song);
-      // eslint-disable-next-line
-      console.log(song)
+      /* eslint-disable */
+      console.log("song changed to: (inside vuex store)")
+      console.log(audio)
+      console.log("title changed to: (inside vuex store)")
+      console.log(title)
+      /* eslint-enable */
     }
   },
   mutations: {
     changeSong(state, song) {
-      state.song = song
+      state.audio = song.audio;
+      state.title = song.title;
     }
   },
   getters: {
-    song: state => state.song
+    audio: state => state.audio,
+    title: state => state.title
   }
 })
 
