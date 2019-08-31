@@ -20,19 +20,23 @@ export default {
       total_time: 0
     } 
   },
-  /* Actually load the song when the source changes */
-  /* Isn't there a specific watcher lifecycle function?
-     this is a workaround... creating a function that
-     gets mounted? the only reason i am noting is because
-     an error gets logged to the console on startup
-     that the media player cant load unspported text/html type */
-  mounted: function() {
+  
+  /* This is a workaround... creating a function that gets mounted?
+     Isn't there a specific watcher "lifecycle" function? */
+  /* An error gets logged to the console on startup
+     that the media player can't load unsupported text/html type.
+     I believe this is because the "song" variable is empty at startup? */
+  mounted: 
+  /* The HTML player does not recognize when the source changes. */
+  function() {
     this.$watch('song', function() {
       this.$refs.player.load()
       this.$refs.player.play()
     });
-    // eslint-disable-next-line
+    /* eslint-disable */
+    console.log("refs")
     console.log(this.$refs)
+    /* eslint-enable */
   },
   computed: {
     song() {
