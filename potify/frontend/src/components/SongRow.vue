@@ -2,7 +2,7 @@
   <div>
     <b-row>
       <b-col>{{ song.play_count }}</b-col>
-      <b-col>{{ song.name }}</b-col>
+      <b-col>{{ song.title}}</b-col>
       <b-col>{{ artists.name }}</b-col>
       <b-col>{{ albums.name }}</b-col>
     </b-row>

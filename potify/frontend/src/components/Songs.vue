@@ -2,29 +2,22 @@
   <div>
     <h2>Songs</h2>
     <b-container fluid>
+
       <b-row>
         <b-col>Plays</b-col>
         <b-col>Title</b-col>
         <b-col>Artist</b-col>
         <b-col>Album</b-col>
       </b-row>
+
       <div
         v-for="(song, index) in song_list"
-        @click="setActiveSong({song: song.audio, title: song.name, artist: song.artist})"
+        @click="setActiveSong(song)"
         :key="index">
           <song-row v-bind:song="song"></song-row>
       </div>
-    </b-container>
-    
-    <!--
-    <div
-      v-for="(song, index) in song_list"
-      @click="setActiveSong(song.audio)"
-      :key="index">
-      <p>{{ song.name }}</p>
-    </div>
-    -->
 
+    </b-container>
   </div>
 </template>
 
@@ -47,7 +40,7 @@ export default {
   methods: {
     ...mapActions( [
       'setActiveSong'
-      // map setActiveSong(song) to this.$store.dispatch('setActiveSong', song, title)
+      // map setActiveSong(song) to this.$store.dispatch('setActiveSong', song)
     ] )
   },
   /* Should created() or mounted() be used here? */

@@ -23,7 +23,7 @@ class Album(models.Model):
 
 
 class Song(models.Model):
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     artists = models.ManyToManyField(Artist, blank=True, related_name='songs')
     albums = models.ManyToManyField(Album, blank=True, related_name='songs')
     audio = models.FileField(upload_to='songs',

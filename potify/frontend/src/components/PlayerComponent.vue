@@ -1,10 +1,14 @@
 <template>
   <div>
+
     <audio controls ref="player">
       <source v-bind:src="audio" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
-    <p> Currently playing: {{ title }} </p >
+    <p><i>Vibrations of...</i><br>
+       <b>{{title}}</b>
+    </p>
+
   </div>
 </template>
 
@@ -29,7 +33,7 @@ export default {
   mounted:
   /* The HTML player does not recognize when the source changes. */
   function() {
-    this.$watch('song', function() {
+    this.$watch('audio', function() {
       this.$refs.player.load()
       this.$refs.player.play()
     });
@@ -41,7 +45,7 @@ export default {
   computed: {
     /* Consider renaming to URL or something else */
     audio() {
-      return this.$store.state.song;
+      return this.$store.state.audio;
     },
     title() {
       return this.$store.state.title;
