@@ -33,7 +33,7 @@ class Song(models.Model):
     play_count = models.IntegerField()
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Playlist(models.Model):
