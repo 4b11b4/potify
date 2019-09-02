@@ -5,7 +5,7 @@
     Your browser does not support the audio element.
     </audio>
     <p>Vibrating your eardrums...<br>
-    <b>{{song.title}}</b> by <i>{{artists.name}}</i> on <u>{{albums.name}}</u>
+    <b>{{song.title}}</b> --- <i>{{artists.name}}</i> --- {{albums.name}}
     </p>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
           })
         } catch (e) {
           this.albums = {
-            name: 'an unknown album...'
+            name: 'unknown album'
           }
         }
       });
