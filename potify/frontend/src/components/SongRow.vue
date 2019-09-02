@@ -47,7 +47,7 @@ export default {
     axios.get(artistUrl)
       .then((response) => {
         this.artists = response.data
-      })
+    })
 
     /* Now get the URL for the album. */
     /* Including some really bad error catching to prevent

@@ -4,8 +4,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    audio: '',
-    title: ''
+    song: Object
   },
   actions: {
     setActiveSong(context, song) {
@@ -22,13 +21,11 @@ export const store = new Vuex.Store({
   },
   mutations: {
     changeSong(state, song) {
-      state.audio = song.audio;
-      state.title = song.title;
+      state.song = song;
     }
   },
   getters: {
-    audio: state => state.audio,
-    title: state => state.title
+    song: state => state.song,
   }
 })
 
