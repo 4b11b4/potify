@@ -21,6 +21,8 @@
   </div>
 </template>
 
+
+
 <script>
 import axios from 'axios'
 import { mapActions } from 'vuex'
@@ -30,8 +32,7 @@ export default {
   name: 'Songs',
   data: function() {
     return {
-      song_list: [],
-      artist_list: [],
+      song_list: []
     }
   },
   components: {
@@ -55,6 +56,8 @@ export default {
   }
 }
 </script>
+
+
 
 <style>
 </style>

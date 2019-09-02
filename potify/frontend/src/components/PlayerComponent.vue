@@ -4,7 +4,7 @@
     <source v-bind:src="audio" type="audio/mp3">
     Your browser does not support the audio element.
     </audio>
-    <p><i>Vibrations of...</i><br>
+    <p><i>Vibrating your eardrums... </i>
     <b>{{title}}</b>
     </p>
   </div>

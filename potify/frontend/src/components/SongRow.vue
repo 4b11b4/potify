@@ -14,9 +14,11 @@ import axios from 'axios'
 
 export default {
   name: 'SongRow',
+  /* This data is passed from song_list in Songs.vue */
   props: {
     song: Object
   },
+  /* This data is retrieved on the creationg of each SongRow component */
   data: function() {
     return {
       artists: Object,
@@ -25,13 +27,18 @@ export default {
   },
   mounted() {
     /* SongRow gets passed a Song object from Songs.vue. It then
-       has to query the API again for the artist and album. This method
-       results in a crap ton of queries??! 
-       Maybe we want to re-structure the Django models */
+       has to query the API again for the artist and album.
+       This method results in a crap ton of queries??! 
+       > Re-structure the Django models? */
     
-    /* Consider re-implementing as a table so the song list can be sorted? */
+    /* Consider re-implementing as a Table so the song list can be sorted? */
 
     /* This method only grabs the FIRST artist and album, not all of them */
+      /* var numArtists = this.song.artists.length;
+      /* /* eslint-disable */
+      /* console.log("num artists");
+      /* console.log(numArtists);
+      /* /* eslint-enable */
 
     /* Get the URL to query for the artist */
     var artistPrim = this.song.artists[0].valueOf();
@@ -44,7 +51,7 @@ export default {
 
     /* Now get the URL for the album. */
     /* Including some really bad error catching to prevent
-       the album name from being "Object" if it is not defined */
+       the album name from displaying "Object" if it is undefined */
     try {
       var albumPrim = this.song.albums[0].valueOf();
       var albumUrl = albumPrim.slice(sliceIdx, albumPrim.length);
