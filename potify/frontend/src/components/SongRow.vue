@@ -90,8 +90,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
+/*
+:root {
+  --bg-color: {{ this.bgcolor }};
+}
+*/
+
 #rowstyle {
-  background-color: var(---bgcolor);
+  background-color: var(--bg-color);
 }
 </style>
