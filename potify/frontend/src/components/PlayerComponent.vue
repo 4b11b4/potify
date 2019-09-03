@@ -4,8 +4,8 @@
     <source v-bind:src="song.audio" type="audio/mp3">
     Your browser does not support the audio element.
     </audio>
-    <p>Vibrating your eardrums...<br>
-    <b>{{song.title}}</b> --- <i>{{artists.name}}</i> --- {{albums.name}}
+    <p id="player-text">Vibrating your eardrums...<br>
+    <b>{{song.title}}</b> --- by {{artists.name}} --- from <i>{{albums.name}}</i>
     </p>
   </div>
 </template>
@@ -70,7 +70,7 @@ export default {
 
 <style>
 /* need the . before the p in order for this style to only affect local */
-.p {
+#player-text {
   color: white;
 }
 </style>
