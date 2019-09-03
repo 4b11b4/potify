@@ -1,7 +1,55 @@
-Command to run the postgres server (Linux):
-/usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l start logfile
+#virtualenvwrapper
+https://virtualenvwrapper.readthedocs.io/en/latest/
+1. pip3 install --user wheel
+2. pip3 install --user virtualenv
+3. pip3 install --user virtualenvwrapper
+4. When installing as user, pip may put virtualenv at
+   ~/.local/bin/virtualenv
+   In this case, you need to copy the binary to /usr/bin because
+   the wrapper is looking for it there. Adding the path to PATH does not
+   work, because wrapper looks for virtualenv in /usr/bin.
+   e.g.
+   cp -r ~/.local/bin/virtualenv /usr/bin/virtualenv
+5. mkvirtualenv potify
+6. When returning to the directory to work, run:
+   workon potify
 
-Vue Install:
+#pip
+1. First time installation of packages:
+   pip install -r requirements.txt
+   (note) pip will likely throw you an error about "pkg-resources=0.0.0".
+   This is apparently caused by Ubuntu providing some bad metadata to pip
+     when you are in a virtualenv.
+   https://github.com/pypa/pip/issues/4022
+   At the above issue, looks to be solved in some version of pip.
+   It may break the virtualenv if removed.
+   I moved it to the last line of the requirements.txt so everything else
+     continues to be installed. This will likely be overwritten if reqs
+     are frozen again.
+   We can simply ignore the error from the pip install then?
+2. pip install -r requirements.txt does not work when it reaches this error.
+3. Remove the pkg-resources=0.0.0 line from requirements.txt so that pip
+   can proceed to actually install everything.
+4. At this point you should be able to run:
+   ./manage.py runserver
+
+#yarn
+https://yarnpkg.com/lang/en/docs/install/#debian-stable
+1. curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+2. echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+3. sudo apt update && sudo apt install yarn
+
+#yarn install
+0. Before running yarn install, you may need a later version of nodejs.
+1. For Debian systems, see:
+   https://github.com/nodesource/distributions/blob/master/README.md#deb
+2. curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+3. sudo apt-get install -y nodejs
+4. Now, you can run:
+   yarn install  
+
+
+#Vue Install:
 1. cp -r ~/pub/blog-examples/integrate-django-vue/frontend/ ~/pub/potify/potify/frontend/
 2. Update settings.py according to tutorial
 3. cp ~/pub/blog-examples/integrate-django-vue/django_vue/views.py ~/pub/potify/potify/potify/views.py
@@ -9,5 +57,8 @@ Vue Install:
 5. Run 'yarn install' in frontend dir
 6. Run 'yarn run serve' in frontend dir 
 
-Vue Router Install:
+#Vue Router Install:
 npm install --save vue-router
+
+#Command to run the postgres server (Linux):
+/usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l start logfile
