@@ -69,7 +69,8 @@ export default {
 </script>
 
 <style>
-p {
+/* need the . before the p in order for this style to only affect local */
+.p {
   color: white;
 }
 </style>
