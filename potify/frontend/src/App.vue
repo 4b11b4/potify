@@ -2,7 +2,7 @@
   <div id="app">
     <Navigation></Navigation>
     <router-view/>
-    <player-component></player-component>
+    <player-component id="player"></player-component>
   </div>
 </template>
 
@@ -43,5 +43,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  min-height: 100%;
+  padding-bottom: 100px;
+}
+#player {
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
 }
 </style>

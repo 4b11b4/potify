@@ -69,4 +69,7 @@ export default {
 </script>
 
 <style>
+p {
+  color: white;
+}
 </style>
