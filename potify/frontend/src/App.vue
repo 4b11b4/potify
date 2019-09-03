@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <Navigation></Navigation>
-    <router-view/>
-    <player-component id="player"></player-component>
+
+    <div id="content">
+      <Navigation></Navigation>
+      <router-view/>
+    </div>
+
+    <div id="player">
+      <player-component></player-component>
+    </div>
+
   </div>
 </template>
 
@@ -43,6 +50,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+/* content and player are for setting a fixed footer
+   this footer would overlap everything, so I made the background black 
+   use "flexbox" instead? */
+#content {
   min-height: 100%;
   padding-bottom: 100px;
 }
