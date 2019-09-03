@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="rowstyle">
     <b-row>
       <b-col>{{ song.play_count }}</b-col>
       <b-col>{{ song.title}}</b-col>
@@ -22,7 +22,8 @@ export default {
   data: function() {
     return {
       artists: Object,
-      albums: Object 
+      albums: Object,
+      bgcolor: '',
     }
   },
   mounted() {
@@ -63,9 +64,34 @@ export default {
         name: 'n/a'
       }
     }
+
+    this.$watch('storedSong', function() {
+      /* eslint-disable */
+      console.log("stored")
+      console.log(this.storedSong.audio)
+      console.log("this")
+      console.log(this.song.audio)
+      if (this.storedSong.audio == this.song.audio) {
+        this.bgcolor = 'green'
+        console.log("green")
+      } else {
+        this.bgcolor = 'white' 
+        console.log("white")
+      }
+      /* eslint-enable */
+    })
+  },
+
+  computed: {
+    storedSong() {
+      return this.$store.state.song;
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+#rowstyle {
+  background-color: var(---bgcolor);
+}
 </style>
