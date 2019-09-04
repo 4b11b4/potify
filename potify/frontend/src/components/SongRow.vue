@@ -1,8 +1,8 @@
 <template>
-  <div id="rowstyle">
-    <b-row>
+  <div>
+    <b-row id="rowstyle">
       <b-col>{{ song.play_count }}</b-col>
-      <b-col>{{ song.title}}</b-col>
+      <b-col>{{ song.title }}</b-col>
       <b-col>{{ artists.name }}</b-col>
       <b-col>{{ albums.name }}</b-col>
     </b-row>
@@ -73,11 +73,10 @@ export default {
       console.log(this.song.audio)
       if (this.storedSong.audio == this.song.audio) {
         this.bgcolor = 'green'
-        console.log("green")
       } else {
         this.bgcolor = 'white' 
-        console.log("white")
       }
+      console.log(this.bgcolor)
       /* eslint-enable */
     })
   },
@@ -91,13 +90,7 @@ export default {
 </script>
 
 <style>
-/*
-:root {
-  --bg-color: {{ this.bgcolor }};
-}
-*/
-
 #rowstyle {
-  background-color: var(--bg-color);
+  background-color: "white";
 }
 </style>

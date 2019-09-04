@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style>
-/* need the . before the p in order for this style to only affect local */
 #player-text {
   color: white;
 }
