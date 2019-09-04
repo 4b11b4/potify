@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <b-row id="rowstyle">
+  <div id="rowstyle">
+    <b-row>
       <b-col>{{ song.play_count }}</b-col>
       <b-col>{{ song.title }}</b-col>
       <b-col>{{ artists.name }}</b-col>
@@ -91,6 +91,6 @@ export default {
 
 <style>
 #rowstyle {
-  background-color: "white";
+  background-color: "green";
 }
 </style>
