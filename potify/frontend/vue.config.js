@@ -1,5 +1,5 @@
 module.exports = {
-  configureWebpack: {
+/*  configureWebpack: {
     module: {
       rules: [
         {
@@ -22,6 +22,7 @@ module.exports = {
       ]
     }
   },
+*/
   devServer: {
     proxy: {
       '^/api/': {

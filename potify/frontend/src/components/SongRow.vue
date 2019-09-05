@@ -89,8 +89,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #rowstyle {
-  background-color: "green";
+  background-color: var(--bgcolor);
 }
 </style>

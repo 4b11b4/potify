@@ -17,7 +17,7 @@ export default {
   data: function() {
     return {
       artists: Object,
-      albums: Object 
+      albums: Object,
     }
   },
   /* This is a workaround: mount a watcher function.
