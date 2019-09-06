@@ -22,7 +22,6 @@
 </template>
 
 
-
 <script>
 import axios from 'axios'
 import { mapActions } from 'vuex'
@@ -49,8 +48,8 @@ export default {
     axios.get('api/songs').then((response) => {
       this.song_list = response.data.results
       /* eslint-disable */
-      console.log('Song_List:')
-      console.log(this.song_list)
+      //console.log('Song_List:')
+      //console.log(this.song_list)
       /* eslint-enable */
     })
   }

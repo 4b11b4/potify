@@ -1,5 +1,5 @@
 <template>
-  <div id="rowstyle">
+  <div :class="{'is-green': isActive, 'is-white': !isActive}">
     <b-row>
       <b-col>{{ song.play_count }}</b-col>
       <b-col>{{ song.title }}</b-col>
@@ -23,7 +23,7 @@ export default {
     return {
       artists: Object,
       albums: Object,
-      bgcolor: '',
+      isActive: false
     }
   },
   mounted() {
@@ -64,20 +64,16 @@ export default {
         name: 'n/a'
       }
     }
-
+    
+    /* If the inherited property Song object is the same as the song
+       which is stored in the vuex store, then change the CSS class of the
+       SongRow */
     this.$watch('storedSong', function() {
-      /* eslint-disable */
-      console.log("stored")
-      console.log(this.storedSong.audio)
-      console.log("this")
-      console.log(this.song.audio)
-      if (this.storedSong.audio == this.song.audio) {
-        this.bgcolor = 'green'
-      } else {
-        this.bgcolor = 'white' 
-      }
-      console.log(this.bgcolor)
-      /* eslint-enable */
+    if (this.storedSong.audio == this.song.audio) {
+      this.isActive = true;
+    } else {
+      this.isActive = false;
+    }
     })
   },
 
@@ -89,8 +85,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#rowstyle {
-  background-color: var(--bgcolor);
+<style>
+.is-white {
+  background-color: white;
+}
+.is-green {
+  background-color: rgba(0, 150, 0, .25);
+  border-radius: 7px;
 }
 </style>
