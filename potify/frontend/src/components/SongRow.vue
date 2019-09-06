@@ -23,7 +23,17 @@ export default {
     return {
       artists: Object,
       albums: Object,
-      isActive: false
+      isActive: false,
+    }
+  },
+  /* Added this in addition to the watcher in order for the "active" song
+     styling to be applied when the Songs tab is switched to */
+  /* I still do not know the difference between created and mounted... */
+  created() {
+    if (this.storedSong.audio == this.song.audio) {
+      this.isActive = true;
+    } else {
+      this.isActive = false;
     }
   },
   mounted() {
