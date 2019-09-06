@@ -59,7 +59,7 @@ export default {
   padding-bottom: 100px;
 }
 #player {
-  height: 100px;
+  height: 125px;
   position: fixed;
   bottom: 0;
   width: 100%;

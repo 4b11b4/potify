@@ -5,20 +5,28 @@
     Your browser does not support the audio element.
     </audio>
     <p id="player-text">Vibrating your eardrums...<br>
-    <b>{{song.title}}</b> --- by {{artists.name}} --- from <i>{{albums.name}}</i>
+    {{song.title}} --- by <b>{{artists.name}}</b> --- from <i>{{albums.name}}</i>
+    <currently-playing
+      v-bind:details="details"
+      ></currently-playing>
     </p>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import CurrentlyPlaying from './CurrentlyPlaying.vue'
 
 export default {
   data: function() {
     return {
       artists: Object,
       albums: Object,
+      details: Object
     }
+  },
+  components: {
+    CurrentlyPlaying
   },
   /* This is a workaround: mount a watcher function.
      Isn't there a specific watcher "lifecycle" function?
@@ -27,6 +35,12 @@ export default {
   /* An error gets logged to the console on startup
      that the media player can't load unsupported text/html type.
      I believe this is because the "song" variable is empty at startup? */
+  methods: {
+    async getAsync(url) {
+      let json = await axios.get(url); 
+      return json;
+    },
+  },
   mounted:
   /* The HTML player does not recognize when the source changes. */
     function() {
@@ -37,15 +51,20 @@ export default {
         var artistPrim = this.song.artists[0].valueOf();
         var sliceIdx = artistPrim.indexOf("api"); // assume idx is same for both
         var artistUrl = artistPrim.slice(sliceIdx, artistPrim.length);
-        axios.get(artistUrl)
+        //axios.get(artistUrl)
+        //  .then((response) => {
+        //    this.artists = response.data
+        //  })
+        this.getAsync(artistUrl)
           .then((response) => {
-            this.artists = response.data
+            this.artists = response.data 
           })
         /* Also copied and pasted this from SongRow to get album... */
         try {
           var albumPrim = this.song.albums[0].valueOf();
           var albumUrl = albumPrim.slice(sliceIdx, albumPrim.length);
-          axios.get(albumUrl).then((response) => {
+          this.getAsync(albumUrl)
+            .then((response) => {
             this.albums = response.data
           })
         } catch (e) {
@@ -53,11 +72,21 @@ export default {
             name: 'unknown album'
           }
         }
-      });
-      /* eslint-disable */
-      console.log("refs")
-      console.log(this.$refs)
-      /* eslint-enable */
+
+        this.details = {
+          title: this.song.title,
+          artist: this.artists.name,
+          album: this.albums.name
+        }
+        /* eslint-disable */
+        console.log("details")
+        console.log(this.details)
+        /* eslint-enable */
+        });
+        /* eslint-disable */
+        //console.log("refs")
+        //console.log(this.$refs)
+        /* eslint-enable */
     },
   // },
   computed: {
