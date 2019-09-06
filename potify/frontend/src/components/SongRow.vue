@@ -102,5 +102,6 @@ export default {
 .is-green {
   background-color: rgba(0, 150, 0, .25);
   border-radius: 7px;
+  font-weight: bold;
 }
 </style>
