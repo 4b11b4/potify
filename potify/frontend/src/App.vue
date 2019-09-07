@@ -9,8 +9,8 @@
     <div id="player">
       <player-component></player-component>
     </div>
-
   </div>
+
 </template>
 
 <script>

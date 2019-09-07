@@ -1,7 +1,12 @@
 <template>
   <div>
     <h2>Home</h2>
-    <p>This is the home page.</p>
+    <br>
+    <h3>Why?</h3>
+    <p>
+      There's no time for philosophy..!<br>
+      <font size="2">(pause)</font>
+    </p>
   </div>
 </template>
 
