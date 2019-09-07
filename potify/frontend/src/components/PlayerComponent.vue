@@ -4,15 +4,9 @@
     <source v-bind:src="song.audio" type="audio/mp3">
     Your browser does not support the audio element.
     </audio>
-    <div id="player-text"><br>
+    <div id="player-text">
       Vibrating your eardrums...
-      <p v-html="details">
-      </p>
-      <!--
-      <currently-playing
-      v-bind:details="details"
-      ></currently-playing>
-      -->
+      <p v-html="details"></p>
     </div>
   </div>
 </template>
