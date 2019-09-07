@@ -1,8 +1,7 @@
 <template>
   <div>
     <h2>Home</h2>
-    <br>
-    <h3>Why?</h3>
+    <h5>Why?</h5>
     <p>
       There's no time for philosophy..!<br>
       <font size="2">(pause)</font>
