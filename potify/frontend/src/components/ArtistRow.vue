@@ -2,7 +2,7 @@
   <div>
     <b-row>
       <b-col>{{ artist.name }}</b-col>
-      <b-col><a v-bind:href="artist.image">
+      <b-col><a v-bind:href="artist.image" target="_blank">
           <img v-bind:src="artist.image">
           </a></b-col>
     </b-row>
