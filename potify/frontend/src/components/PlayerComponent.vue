@@ -115,7 +115,7 @@ export default {
       else {
         console.log("else")
         /* eslint-enable */
-        return ''.concat(this.song.title, '--- by <b>',
+        return ''.concat(this.song.title, ' --- by <b>',
           this.artists.name, '</b> --- from <i>',
           this.albums.name, '<i>')
       }
