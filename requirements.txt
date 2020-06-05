@@ -2,7 +2,7 @@ amqp==1.4.9
 anyjson==0.3.3
 billiard==3.3.0.23
 celery==3.1.26.post2
-Django==2.1.7
+Django==2.2.13
 django-audiofield==0.10.0
 django-celery==3.2.2
 django-extensions==2.1.6
